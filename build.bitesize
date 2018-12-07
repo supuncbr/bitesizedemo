@@ -2,6 +2,7 @@ project: bitesizedemo
 components:
   - name: nodejs-app
     os: linux
+    dependencies:
     - type: debian-package
       package: nodejs
       version: 8.9.0-1nodesource1
