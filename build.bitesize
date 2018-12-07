@@ -2,6 +2,9 @@ project: bitesizedemo
 components:
   - name: nodejs-app
     os: linux
+    dependencies:
+    - type: debian-package
+      package: nodejs
     repository:
       git: git@github.com:Puvipavan/nodejs-app.git
       branch: master
