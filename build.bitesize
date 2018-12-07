@@ -2,9 +2,11 @@ project: bitesizedemo
 components:
   - name: nodejs-app
     os: linux
-    dependencies:
     - type: debian-package
       package: nodejs
+      version: 8.9.0-1nodesource1
+      location: >-
+        https://deb.nodesource.com/node_8.x/pool/main/n/nodejs/nodejs_8.9.0-1nodesource1_amd64.deb
     repository:
       git: git@github.com:Puvipavan/nodejs-app.git
       branch: master
