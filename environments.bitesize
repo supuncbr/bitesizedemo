@@ -1,0 +1,29 @@
+project: bitesizedemo
+environments:
+  - name: dev
+    namespace: bitesizedemo-dev
+    deployment:
+      method: rolling-upgrade
+    services:
+      - name: nodejs-app
+        external_url: nodejs-app-dev.prsn.io
+        port: 80
+        ssl: "false"
+        replicas: 2
+        env:
+          - name: MESSAGE
+            value: "I am From Dev Environment"         
+  - name: prd
+    namespace: bitesizedemo-prd
+    deployment:
+      method: rolling-upgrade
+      mode: manual
+    services:
+      - name: nodejs-app
+        external_url: nodejs-app-prd.prsn.io
+        port: 80
+        ssl: "false"
+        replicas: 2
+        env:
+          - name: MESSAGE
+            value: "I am From Prd Environment"

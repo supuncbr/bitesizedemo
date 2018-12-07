@@ -1,0 +1,12 @@
+project: bitesizedemo
+applications:
+  - name: nodejs-app
+    runtime: ubuntu-nodejs5x:1.2
+    version: "1.0.0"
+    dependencies:
+      - name: nodejs-app
+        type: debian-package
+        origin:
+          build: nodejs-app
+        version: 1.0
+    command: "npm start --prefix /app"
