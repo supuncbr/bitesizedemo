@@ -12,6 +12,6 @@ components:
       - shell: sudo mkdir -p /app
       - shell: sudo npm install
       - shell: sudo cp -rf ./* /app
-      - shell: sudo /usr/local/bin/fpm -s dir -n nodejs-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /app
+      - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n nodejs-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /app
     artifacts:
       - location: "*.deb"
