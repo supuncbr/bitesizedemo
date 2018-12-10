@@ -7,7 +7,7 @@ environments:
     services:
       - name: nodejs-app
         external_url: nodejs-app-dev.prsn.io
-        port: 80
+        port: 80,8001
         ssl: "false"
         replicas: 2
         env:
