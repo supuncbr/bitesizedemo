@@ -27,7 +27,3 @@ environments:
         env:
           - name: MESSAGE
             value: "I am From Prd Environment"
-      - name: nodejs-app-alias
-        external_url: puvipavan-test-bluegreen.prsn.io
-        port: 80
-        ssl: "false"
