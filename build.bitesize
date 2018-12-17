@@ -26,6 +26,6 @@ components:
     build:
       - shell: sudo mkdir -p /var/www/html
       - shell: sudo cp -rf ./* /var/www/html
-      - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n php-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /app
+      - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n php-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /var/www/html
     artifacts:
       - location: "*.deb"
