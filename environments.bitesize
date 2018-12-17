@@ -27,3 +27,8 @@ environments:
         env:
           - name: MESSAGE
             value: "I am From Prd Environment"
+      - name: php-app
+        external_url: php-app-prd.prsn.io
+        port: 80
+        ssl: "false"
+        replicas: 1
