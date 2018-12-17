@@ -16,8 +16,7 @@ environments:
   - name: prd
     namespace: bitesizedemo-prd
     deployment:
-      method: bluegreen
-      active: green
+      method: rolling-upgrade
     services:
       - name: nodejs-app
         external_url: nodejs-app-prd.prsn.io
