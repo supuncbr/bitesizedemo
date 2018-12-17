@@ -18,3 +18,14 @@ components:
       - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n nodejs-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /app
     artifacts:
       - location: "*.deb"
+  - name: php-app
+    os: linux
+    repository:
+      git: git@github.com:Puvipavan/testphp.git
+      branch: master
+    build:
+      - shell: sudo mkdir -p /var/www/html
+      - shell: sudo cp -rf ./* /var/www/html
+      - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n php-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /app
+    artifacts:
+      - location: "*.deb"
