@@ -10,14 +10,8 @@ applications:
           build: nodejs-app
         version: 1.0
     command: "npm start --prefix /app"
-    - name: php-app
+  - name: php-app
     runtime: ubuntu-php-fpm:1.7
     version: "1.0.0"
-    dependencies:
-      - name: nodejs-app
-        type: debian-package
-        origin:
-          build: nodejs-app
-        version: 1.0
-    command: "npm start --prefix /app"
+    command: "php5-fpm -F --fpm-config /etc/php5/fpm/php-fpm.conf"
     
