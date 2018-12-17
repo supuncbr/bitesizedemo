@@ -31,4 +31,4 @@ environments:
         external_url: php-app-prd.prsn.io
         port: 80
         ssl: "false"
-        replicas: 1
+        replicas: 2
