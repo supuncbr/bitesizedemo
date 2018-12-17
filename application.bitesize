@@ -13,5 +13,5 @@ applications:
   - name: php-app
     runtime: ubuntu-php-fpm:1.7
     version: "1.0.0"
-    command: "ls /etc/php5/fpm/; php5-fpm -F --fpm-config /etc/php5/fpm/php-fpm.conf"
+    command: "ls /etc/php5/fpm/; php5-fpm --fpm-config /etc/php5/fpm/php-fpm.conf -F"
     
