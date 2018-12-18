@@ -1,7 +1,7 @@
 project: bitesizedemo
 environments:
   - name: dev
-    namespace: bitesizedemo-dev
+    namespace: bitesizedemo-stg
     deployment:
       method: rolling-upgrade
     services:
