@@ -12,7 +12,7 @@ applications:
       - name: php-test
         type: debian-package
         origin:
-          package: php5
+          build: php5
     command: "npm start --prefix /app"
   - name: php-app
     runtime: ubuntu-php-fpm:1.7
