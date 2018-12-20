@@ -15,7 +15,13 @@ applications:
           build: php5
     command: "npm start --prefix /app"
   - name: php-app
-    runtime: ubuntu-php-fpm:1.7
+    runtime: ubuntu-httpdfcgi:1.3
     version: "1.0.0"
-    command: "php5 --fpm-config /etc/php5/fpm/php-fpm.conf -F"
+    dependencies:
+      - name: php-app
+        type: debian-package
+        origin:
+          build: php-app
+        version: 1.0
+    command: "apache2ctl -DFOREGROUND"
     
