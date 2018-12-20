@@ -22,12 +22,18 @@ components:
       - location: "*.deb"
   - name: php-app
     os: linux
+    dependencies:
+      - type: debian-package
+        package: php5
+        repository: ppa:ondrej/php
+      - type: debian-package
+        package: libapache2-mod-php5
     repository:
       git: git@github.com:Puvipavan/testphp.git
       branch: master
     build:
-      - shell: sudo mkdir -p /var/www/html
-      - shell: sudo cp -rf ./* /var/www/html
+      - shell: sudo mkdir -p /var/www/
+      - shell: sudo cp -rf ./* /var/www/
       - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n php-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /var/www/html
     artifacts:
       - location: "*.deb"
