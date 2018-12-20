@@ -17,6 +17,7 @@ components:
       - shell: echo idiot >> start.sh
       - shell: sudo mv start.sh /app/start.sh
       - shell: sudo cp -rf ./* /app
+      - shell: sudo ls /app
       - shell: sudo npm install --prefix /app
       - shell: sudo /usr/local/bin/fpm -s dir -v 1.0 -n nodejs-app --iteration $(date "+%Y%m%d%H%M%S") -t deb /app
     artifacts:
