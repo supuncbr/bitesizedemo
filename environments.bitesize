@@ -15,7 +15,8 @@ environments:
           - name: MESSAGE
             value: "I am From Dev Environment"      
             - name: dev
-  - namespace: bitesizedemo-stg
+  - name: dev
+    namespace: bitesizedemo-stg
     deployment:
       method: rolling-upgrade
     services:
