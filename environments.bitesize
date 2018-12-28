@@ -14,7 +14,6 @@ environments:
         env:
           - name: MESSAGE
             value: "I am From Dev Environment"      
-            - name: dev
   - name: dev
     namespace: bitesizedemo-stg
     deployment:
