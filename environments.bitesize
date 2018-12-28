@@ -3,16 +3,27 @@ environments:
   - name: dev
     namespace: bitesizedemo-stg
     deployment:
-      method: rolling-upgrade
+      method: bluegreen
+      active: green
     services:
       - name: nodejs-app
         external_url: nodejs-app-dev.prsn.io
-        port: 80,8001
+        port: 80
         ssl: "false"
         replicas: 2
         env:
           - name: MESSAGE
-            value: "I am From Dev Environment"         
+            value: "I am From Dev Environment"      
+            - name: dev
+  - namespace: bitesizedemo-stg
+    deployment:
+      method: rolling-upgrade
+    services:
+      - name: nodejs-app-alias
+        external_url: thisistesting.test.local
+        port: 80
+        ssl: "false"
+        backend: nodejs-app-green
   - name: prd
     namespace: bitesizedemo-prd
     deployment:
